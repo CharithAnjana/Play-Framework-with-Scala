@@ -1,0 +1,65 @@
+@(member:List[Array[String]])
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Group 03</title>
+        <style>
+                #customers {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 3%;
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 50%;
+                    background-color: #f2f2f2;
+                }
+
+                #customers td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+
+                #customers tr:hover {background-color: #ddd;}
+
+                #customers th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: #04AA6D;
+                    color: white;
+                }
+                #caption {
+                    text-align: center;
+                    font-size: 25px;
+                    color: #1ba2cf;
+                    font-family: sans-serif;
+                }
+        </style>
+    </head>
+    <body style="background-image: linear-gradient(to right, #f8ffe8 , #e8feff);">
+        <table id="customers">
+            <br>
+            <p id="caption">Group 03 Details</p>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Index No</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(row <- member){
+                    <tr>
+                        @for(details <- row){
+                            <td>@details</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
